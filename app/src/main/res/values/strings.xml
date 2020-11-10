@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Palette Provider</string>
+    <string name="extract_color">Extract Color</string>
+    <string name="mix_this_color">Mix This Color!</string>
 </resources>
