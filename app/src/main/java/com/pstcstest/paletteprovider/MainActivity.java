@@ -56,8 +56,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ActivityCompat.requestPermissions(MainActivity.this,
-                new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
-                2);
+//        ActivityCompat.requestPermissions(MainActivity.this,
+//                new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+//                2);
+//
+        Intent intent = new Intent(this, ExtractColorActivity.class);
+        startActivity ( intent );
     }
 }

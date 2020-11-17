@@ -11,6 +11,7 @@ import android.content.res.AssetManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -20,60 +21,37 @@ import android.widget.ImageView;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ExtractColorActivity extends AppCompatActivity {
-    public static final int PICK_IMAGE = 1;
 
     Button mixThisColorButton;
-    View lightVibrantColorView, vibrantColorView, darkVibrantColorView, lightMutedColorView, mutedColorView, darkMutedColorView;
 
-    public Bitmap parsePickImageResult(Intent data) {
-        Uri selectedImage = data.getData();
-        String[] filePathColumn = {MediaStore.Images.Media.DATA};
-        if (selectedImage != null) {
-            Cursor cursor = getContentResolver().query(selectedImage,
-                    filePathColumn, null, null, null);
-            if (cursor != null) {
-                cursor.moveToFirst();
 
-                int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-                String picturePath = cursor.getString(columnIndex);
-                cursor.close();
-                return BitmapFactory.decodeFile(picturePath);
-            }
-        }
-        return null;
+    boolean isPictureExtraction;
+
+    private HashMap<Integer, Integer> divideSelectedColor(Integer rgb){
+        HashMap<Integer, Integer> colorDivisionMap = new HashMap<>();
+
+        colorDivisionMap.put(Color.BLUE, 40);
+        colorDivisionMap.put(Color.GREEN, 40);
+        colorDivisionMap.put(Color.RED, 20);
+
+        return colorDivisionMap;
     }
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == PICK_IMAGE) {
-            Bitmap bitmap = parsePickImageResult(data);
+    private void startResultsActivity(){
 
-            ImageView mImg = (ImageView) findViewById(R.id.extractColorImage);
-            mImg.setImageBitmap(bitmap);
-            Palette p = Palette.from(bitmap).generate();
+        Integer targetColor = Color.YELLOW;
 
-            if(p.getLightVibrantSwatch() != null){
-                lightVibrantColorView.setBackgroundColor(p.getLightVibrantSwatch().getRgb());
-            }
-            if(p.getVibrantSwatch() != null){
-                vibrantColorView.setBackgroundColor(p.getVibrantSwatch().getRgb());
-            }
-            if(p.getDarkVibrantSwatch() != null){
-                darkVibrantColorView.setBackgroundColor(p.getDarkVibrantSwatch().getRgb());
-            }
-            if(p.getLightMutedSwatch() != null){
-                lightMutedColorView.setBackgroundColor(p.getLightMutedSwatch().getRgb());
-            }
-            if(p.getMutedSwatch() != null){
-                mutedColorView.setBackgroundColor(p.getMutedSwatch().getRgb());
-            }
-            if(p.getDarkMutedSwatch() != null){
-                darkMutedColorView.setBackgroundColor(p.getDarkMutedSwatch().getRgb());
-            }
-        }
+        Intent intent = new Intent(this, ResultsActivity.class);
+
+        HashMap<Integer, Integer> dividedColors = divideSelectedColor(targetColor);
+
+        intent.putExtra(getString(R.string.target_color_key), targetColor);
+        intent.putExtra(getString(R.string.divided_colors_key), dividedColors);
+        startActivity(intent);
     }
 
     @Override
@@ -82,17 +60,20 @@ public class ExtractColorActivity extends AppCompatActivity {
         setContentView(R.layout.activity_extract_color);
 
 
-        mixThisColorButton = (Button) findViewById(R.id.mixThisColorButton);
-        lightVibrantColorView = (View) findViewById(R.id.lightVibrantColorView);
-        vibrantColorView = (View) findViewById(R.id.vibrantColorView);
-        darkVibrantColorView = (View) findViewById(R.id.darkVibrantColorView);
-        lightMutedColorView = (View) findViewById(R.id.lightMutedColorView);
-        mutedColorView = (View) findViewById(R.id.mutedColorView);
-        darkMutedColorView = (View) findViewById(R.id.darkMutedColorView);
+        isPictureExtraction = getIntent().getBooleanExtra(getString(R.string.is_picture_extraction_key), false);
+        if(isPictureExtraction){
+            // Handle turning activity into picture extraction activity
+        }else{
+            // Handle turning activity into color wheel extraction activity
+        }
 
-        mixThisColorButton.setOnClickListener(view -> {
-            Intent pickPhoto = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-            startActivityForResult(pickPhoto, 1);
+        mixThisColorButton = (Button) findViewById(R.id.mixThisColorButton);
+
+        mixThisColorButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startResultsActivity();
+            }
         });
     }
 
