@@ -1,9 +1,304 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SavedColorsActivity">
+    tools:context=".SavedColorsActivity"
+    android:orientation="vertical"
+    android:weightSum="2"
+    android:background="#aaceca">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Saved colors -->
+    <LinearLayout
+        android:id="@+id/SavedColorsParent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="30dp"
+        android:layout_weight="1"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignParentTop="true"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Saved Colors"
+            android:gravity="center"
+            android:layout_margin="5dp"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:textColor="#2a6e38"/>
+
+        <GridLayout
+            android:id="@+id/savedColors"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:rowCount="4"
+            android:columnCount="4"
+            android:backgroundTint="#aaceca">
+
+            <View android:id="@+id/savedColor00"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="15dp"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:background="#833434"
+                android:visibility="visible"/>
+
+            <View android:id="@+id/savedColor01"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="15dp"
+                android:layout_row="0"
+                android:layout_column="1"
+                android:background="#833499"
+                android:visibility="visible"/>
+
+            <View android:id="@+id/savedColor02"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="15dp"
+                android:layout_row="0"
+                android:layout_column="2"
+                android:background="#123099"
+                android:visibility="visible"/>
+
+            <View android:id="@+id/savedColor03"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="15dp"
+                android:layout_row="0"
+                android:layout_column="3"
+                android:background="@drawable/color_block_border"
+                android:visibility="visible"/>
+
+            <View android:id="@+id/savedColor10"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="15dp"
+                android:layout_row="1"
+                android:layout_column="0"
+                android:background="@drawable/color_block_border"
+                android:visibility="visible"/>
+
+            <View android:id="@+id/savedColor11"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="15dp"
+                android:layout_row="1"
+                android:layout_column="1"
+                android:background="@drawable/color_block_border"
+                android:visibility="visible"/>
+
+            <View android:id="@+id/savedColor12"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="15dp"
+                android:layout_row="1"
+                android:layout_column="2"
+                android:background="@drawable/color_block_border"
+                android:visibility="visible"/>
+
+            <View android:id="@+id/savedColor13"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="15dp"
+                android:layout_row="1"
+                android:layout_column="3"
+                android:background="@drawable/color_block_border"
+                android:visibility="visible"/>
+
+            <View android:id="@+id/savedColor20"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="15dp"
+                android:layout_row="2"
+                android:layout_column="0"
+                android:background="@drawable/color_block_border"
+                android:visibility="visible"/>
+
+            <View android:id="@+id/savedColor21"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="15dp"
+                android:layout_row="2"
+                android:layout_column="1"
+                android:background="@drawable/color_block_border"
+                android:visibility="visible"/>
+
+            <View android:id="@+id/savedColor22"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="15dp"
+                android:layout_row="2"
+                android:layout_column="2"
+                android:background="@drawable/color_block_border"
+                android:visibility="visible"/>
+
+            <View android:id="@+id/savedColor23"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="15dp"
+                android:layout_row="2"
+                android:layout_column="3"
+                android:background="@drawable/color_block_border"
+                android:visibility="visible"/>
+
+        </GridLayout>
+
+    </LinearLayout>
+
+    <!-- Popular colors -->
+    <!-- Saved colors -->
+    <LinearLayout
+        android:id="@+id/PopularColorsParent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="30dp"
+        android:layout_weight="1"
+        android:layout_below="@id/SavedColorsParent"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Popular Colors"
+            android:gravity="center"
+            android:layout_margin="5dp"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:textColor="#2a6e38"/>
+
+        <GridLayout
+            android:id="@+id/popularColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:rowCount="3"
+            android:columnCount="4">
+
+            <View android:id="@+id/popColor00"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="15dp"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:background="#ffa7a3"
+                android:visibility="visible"/>
+
+            <View android:id="@+id/popColor01"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="15dp"
+                android:layout_row="0"
+                android:layout_column="1"
+                android:background="#f1ffed"
+                android:visibility="visible"/>
+
+            <View android:id="@+id/popColor02"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="15dp"
+                android:layout_row="0"
+                android:layout_column="2"
+                android:background="#a2d7dd"
+                android:visibility="visible"/>
+
+            <View android:id="@+id/popColor03"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="15dp"
+                android:layout_row="0"
+                android:layout_column="3"
+                android:visibility="visible"/>
+
+            <View android:id="@+id/popColor03"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="15dp"
+                android:layout_row="0"
+                android:layout_column="3"
+                android:background="@drawable/color_block_border"
+                android:visibility="visible"/>
+
+            <View android:id="@+id/popColor10"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="15dp"
+                android:layout_row="1"
+                android:layout_column="0"
+                android:background="@drawable/color_block_border"
+                android:visibility="visible"/>
+
+            <View android:id="@+id/popColor11"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="15dp"
+                android:layout_row="1"
+                android:layout_column="1"
+                android:background="@drawable/color_block_border"
+                android:visibility="visible"/>
+
+            <View android:id="@+id/popColor12"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="15dp"
+                android:layout_row="1"
+                android:layout_column="2"
+                android:background="@drawable/color_block_border"
+                android:visibility="visible"/>
+
+            <View android:id="@+id/popColor13"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="15dp"
+                android:layout_row="1"
+                android:layout_column="3"
+                android:background="@drawable/color_block_border"
+                android:visibility="visible"/>
+
+            <View android:id="@+id/popColor20"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="15dp"
+                android:layout_row="2"
+                android:layout_column="0"
+                android:background="@drawable/color_block_border"
+                android:visibility="visible"/>
+
+            <View android:id="@+id/popColor21"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="15dp"
+                android:layout_row="2"
+                android:layout_column="1"
+                android:background="@drawable/color_block_border"
+                android:visibility="visible"/>
+
+            <View android:id="@+id/popColor22"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="15dp"
+                android:layout_row="2"
+                android:layout_column="2"
+                android:background="@drawable/color_block_border"
+                android:visibility="visible"/>
+
+            <View android:id="@+id/popColor23"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="15dp"
+                android:layout_row="2"
+                android:layout_column="3"
+                android:background="@drawable/color_block_border"
+                android:visibility="visible"/>
+
+        </GridLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
