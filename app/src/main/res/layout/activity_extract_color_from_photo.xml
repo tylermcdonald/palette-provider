@@ -5,6 +5,40 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ExtractColorActivity">
+
+    <TextView
+        android:id="@+id/extractColorTitle"
+        android:layout_width="411dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="@string/extract_color"
+        android:textColor="@color/black"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/colorPickerView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_weight="1.0" />
+
+    <com.skydoves.colorpickerview.ColorPickerView
+        android:id="@+id/colorPickerView"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@id/lightMutedColorView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/extractColorTitle"
+        app:layout_constraintVertical_weight="2.0"
+        app:selector="@drawable/wheel"
+        app:selector_size="32dp"
+        app:alpha_selector="0.8"
+        app:alpha_flag="0.8"
+        app:actionMode="last"
+        app:preferenceName="MyColorPicker"
+        app:debounceDuration="200"/>
+
     <Button
         android:id="@+id/mixThisColorButton"
         android:layout_width="wrap_content"
@@ -16,31 +50,6 @@
         app:layout_constraintTop_toBottomOf="@id/lightMutedColorView"
         app:layout_constraintVertical_weight="1.0" />
 
-    <ImageView
-        android:id="@+id/extractColorImage"
-        android:layout_width="300dp"
-        android:layout_height="256dp"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toTopOf="@id/lightMutedColorView"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/extractColorTitle"
-        app:layout_constraintVertical_weight="2.0" />
-
-    <TextView
-        android:id="@+id/extractColorTitle"
-        android:layout_width="411dp"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:text="@string/extract_color"
-        android:textColor="@color/black"
-        android:textSize="36sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/extractColorImage"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_weight="1.0" />
 
     <View
         android:id="@+id/lightVibrantColorView"
@@ -50,7 +59,7 @@
         app:layout_constraintEnd_toStartOf="@+id/vibrantColorView"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/extractColorImage" />
+        app:layout_constraintTop_toBottomOf="@id/colorPickerView" />
 
     <View
         android:id="@+id/vibrantColorView"
@@ -60,7 +69,7 @@
         app:layout_constraintEnd_toStartOf="@+id/darkVibrantColorView"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/lightVibrantColorView"
-        app:layout_constraintTop_toBottomOf="@id/extractColorImage" />
+        app:layout_constraintTop_toBottomOf="@id/colorPickerView" />
 
     <View
         android:id="@+id/darkVibrantColorView"
@@ -70,7 +79,7 @@
         app:layout_constraintEnd_toStartOf="@+id/lightMutedColorView"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/vibrantColorView"
-        app:layout_constraintTop_toBottomOf="@id/extractColorImage" />
+        app:layout_constraintTop_toBottomOf="@id/colorPickerView" />
 
     <View
         android:id="@+id/lightMutedColorView"
@@ -80,7 +89,7 @@
         app:layout_constraintEnd_toStartOf="@+id/mutedColorView"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/darkVibrantColorView"
-        app:layout_constraintTop_toBottomOf="@id/extractColorImage" />
+        app:layout_constraintTop_toBottomOf="@id/colorPickerView" />
 
     <View
         android:id="@+id/mutedColorView"
@@ -90,7 +99,7 @@
         app:layout_constraintEnd_toStartOf="@+id/darkMutedColorView"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/lightMutedColorView"
-        app:layout_constraintTop_toBottomOf="@id/extractColorImage" />
+        app:layout_constraintTop_toBottomOf="@id/colorPickerView" />
 
     <View
         android:id="@+id/darkMutedColorView"
@@ -100,6 +109,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/mutedColorView"
-        app:layout_constraintTop_toBottomOf="@id/extractColorImage" />
+        app:layout_constraintTop_toBottomOf="@id/colorPickerView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

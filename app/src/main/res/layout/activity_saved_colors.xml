@@ -15,7 +15,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_margin="30dp"
-        android:layout_weight="1"
         android:layout_gravity="center_horizontal"
         android:layout_alignParentTop="true"
         >
@@ -159,7 +158,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_margin="30dp"
-        android:layout_weight="1"
         android:layout_below="@id/SavedColorsParent"
         >
 

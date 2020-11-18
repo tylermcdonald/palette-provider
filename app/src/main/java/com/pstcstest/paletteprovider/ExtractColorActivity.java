@@ -1,13 +1,9 @@
 package com.pstcstest.paletteprovider;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 import androidx.palette.graphics.Palette;
 
-import android.Manifest;
-import android.content.Context;
 import android.content.Intent;
-import android.content.res.AssetManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -17,9 +13,6 @@ import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-
-import java.io.IOException;
-import java.io.InputStream;
 
 public class ExtractColorActivity extends AppCompatActivity {
     public static final int PICK_IMAGE = 1;
@@ -51,8 +44,8 @@ public class ExtractColorActivity extends AppCompatActivity {
         if (requestCode == PICK_IMAGE) {
             Bitmap bitmap = parsePickImageResult(data);
 
-            ImageView mImg = (ImageView) findViewById(R.id.extractColorImage);
-            mImg.setImageBitmap(bitmap);
+//            ImageView mImg = (ImageView) findViewById(R.id.extractColorImage);
+//            mImg.setImageBitmap(bitmap);
             Palette p = Palette.from(bitmap).generate();
 
             if(p.getLightVibrantSwatch() != null){
@@ -79,7 +72,7 @@ public class ExtractColorActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_extract_color);
+        setContentView(R.layout.activity_extract_color_colorwheel);
 
 
         mixThisColorButton = (Button) findViewById(R.id.mixThisColorButton);
