@@ -5,7 +5,7 @@
     android:id="@+id/mainResultsLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
+    android:background="@drawable/opaque_lillies"
     android:gravity="center_horizontal"
     android:orientation="vertical"
     tools:context=".ResultsActivity">
@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/theme_button"
         android:text="@string/save_this_color"
-        app:backgroundTint="@android:color/white"
-        android:textColor="@color/black" />
+        app:backgroundTint="#2a6e3a"
+        android:textColor="@color/white" />
 
 </LinearLayout>

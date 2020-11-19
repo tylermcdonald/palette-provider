@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
 //                new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
 //                2);
 //
-        Intent intent = new Intent(this, ExtractColorActivity.class);
+        Intent intent = new Intent(this, HomeActivity.class);
         startActivity ( intent );
     }
 }

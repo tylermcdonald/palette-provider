@@ -1,0 +1,22 @@
+com/pstcstest/paletteprovider/SavedColorsActivity.java
+ com.pstcstest.paletteprovider.SavedColorsActivity
+com/pstcstest/paletteprovider/BuildConfig.java
+ com.pstcstest.paletteprovider.BuildConfig
+com/pstcstest/paletteprovider/ResultsActivity.java
+ com.pstcstest.paletteprovider.ResultsActivity
+com/pstcstest/paletteprovider/EditPhotoActivity.java
+ com.pstcstest.paletteprovider.EditPhotoActivity
+com/pstcstest/paletteprovider/ErrorActivity.java
+ com.pstcstest.paletteprovider.ErrorActivity
+com/pstcstest/paletteprovider/ExtractColorActivity.java
+ com.pstcstest.paletteprovider.ExtractColorActivity
+ com.pstcstest.paletteprovider.ExtractColorActivity$1
+com/pstcstest/paletteprovider/MainActivity.java
+ com.pstcstest.paletteprovider.MainActivity
+com/pstcstest/paletteprovider/LoadingActivity.java
+ com.pstcstest.paletteprovider.LoadingActivity
+ com.pstcstest.paletteprovider.LoadingActivity$1
+com/pstcstest/paletteprovider/CameraActivity.java
+ com.pstcstest.paletteprovider.CameraActivity
+com/pstcstest/paletteprovider/HomeActivity.java
+ com.pstcstest.paletteprovider.HomeActivity

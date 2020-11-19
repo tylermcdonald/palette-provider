@@ -1,19 +1,19 @@
 package com.pstcstest.paletteprovider;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.core.content.res.ResourcesCompat;
 
 import java.util.HashMap;
 
@@ -94,11 +94,12 @@ public class ResultsActivity extends AppCompatActivity {
     TextView createColorTextView(String text, RelativeLayout.LayoutParams lp){
         TextView colorTextView = new TextView(this);
 
-        colorTextView.setTextSize(36);
+        colorTextView.setTextSize(30);
         colorTextView.setTextColor(ContextCompat.getColor(this, R.color.theme_text));
         colorTextView.setText(text);
+        Typeface typeface = ResourcesCompat.getFont(this, R.font.lobster);
+        colorTextView.setTypeface(typeface);
         colorTextView.setLayoutParams(lp);
-
         return colorTextView;
     }
     TextView createColorSquareView(int color, String text, RelativeLayout.LayoutParams lp){
