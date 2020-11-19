@@ -33,21 +33,22 @@
             android:orientation="vertical"
             android:layout_gravity="center_horizontal"
             >
-            <Button
-                android:id="@+id/camera"
-                android:layout_width="match_parent"
-                android:layout_marginTop="40dp"
-                android:layout_height="60dp"
-                android:background="@drawable/rounded_buttons"
-                android:layout_marginBottom="20dp"
-                android:text="Take Picture"
-                android:textSize="16dp"
-                android:textColor="@color/white"
-                android:backgroundTint="#f7aaceca"/>
+<!--            <Button-->
+<!--                android:id="@+id/camera"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_marginTop="40dp"-->
+<!--                android:layout_height="60dp"-->
+<!--                android:background="@drawable/rounded_buttons"-->
+<!--                android:layout_marginBottom="20dp"-->
+<!--                android:text="Take Picture"-->
+<!--                android:textSize="16dp"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:backgroundTint="#f7aaceca"/>-->
             <Button
                 android:id="@+id/cameraRoll"
                 android:layout_height="60dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginBottom="30dp"
                 android:layout_width="match_parent"
                 android:text="choose from Camera Roll"
                 android:textColor="@color/white"
@@ -57,7 +58,7 @@
             <Button
                 android:id="@+id/colorWheel"
                 android:layout_width="match_parent"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="30dp"
                 android:layout_height="60dp"
                 android:textColor="@color/white"
                 android:textSize="16dp"

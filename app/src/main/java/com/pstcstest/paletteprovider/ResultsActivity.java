@@ -7,6 +7,9 @@ import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -39,46 +42,59 @@ public class ResultsActivity extends AppCompatActivity {
         colorBreakdownLayout = (LinearLayout) findViewById(R.id.colorBreakdownLayout);
 
         RelativeLayout.LayoutParams colorRowLayoutParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-        colorRowLayoutParams.setMargins(screenWidth / 8, 32, screenWidth / 8, 32);
+        colorRowLayoutParams.setMargins(screenWidth / 8, 50, screenWidth / 8, 32);
         colorRowLayoutParams.addRule(RelativeLayout.CENTER_VERTICAL);
 
-        RelativeLayout.LayoutParams colorSquareLayoutParams = new RelativeLayout.LayoutParams(172, 172);
+        RelativeLayout.LayoutParams colorSquareLayoutParams = new RelativeLayout.LayoutParams(200, 200);
+        RelativeLayout.LayoutParams colorSquareTargetLayoutParams = new RelativeLayout.LayoutParams(300, 300);
+        colorSquareTargetLayoutParams.addRule(RelativeLayout.CENTER_HORIZONTAL);
+        colorSquareTargetLayoutParams.addRule(RelativeLayout.CENTER_VERTICAL);
         colorSquareLayoutParams.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
         colorSquareLayoutParams.addRule(RelativeLayout.CENTER_VERTICAL);
 
         RelativeLayout.LayoutParams targetColorTextLayoutParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
         targetColorTextLayoutParams.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
+
         targetColorTextLayoutParams.addRule(RelativeLayout.CENTER_VERTICAL);
 
         RelativeLayout.LayoutParams colorTextLayoutParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
         colorTextLayoutParams.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
+        colorSquareLayoutParams.addRule(RelativeLayout.CENTER_VERTICAL);
 
         RelativeLayout targetColorRow = new RelativeLayout(this);
         targetColorRow.setLayoutParams(colorRowLayoutParams);
         targetColorRow.setGravity(Gravity.CENTER_VERTICAL);
 
-        TextView targetColorSquareView = createColorSquareView(targetColor, "", colorSquareLayoutParams);
+        RelativeLayout targetColorRowText = new RelativeLayout(this);
+        targetColorRowText.setLayoutParams(colorRowLayoutParams);
+        targetColorRowText.setGravity(Gravity.CENTER_VERTICAL);
+        targetColorRowText.setGravity(Gravity.CENTER_HORIZONTAL);
 
-        targetColorSquareView.setLayoutParams(colorSquareLayoutParams);
+        TextView targetColorSquareView = createColorSquareView(targetColor, "", colorSquareTargetLayoutParams);
+
+        targetColorSquareView.setLayoutParams(colorSquareTargetLayoutParams);
 
         TextView targetColorTextView = createColorTextView(getString(R.string.target_color), targetColorTextLayoutParams);
 
         targetColorRow.addView(targetColorSquareView);
-        targetColorRow.addView(targetColorTextView);
+        targetColorRowText.addView(targetColorTextView);
 
+        colorBreakdownLayout.addView(targetColorRowText);
         colorBreakdownLayout.addView(targetColorRow);
+
 
         char colorIndex = 'A';
         for(Integer color : dividedColors.keySet()){
             String colorPercentage = dividedColors.get(color)+"%";
-            String colorString = "Color "+colorIndex;
+            String colorString = "COLOR "+colorIndex;
 
             RelativeLayout colorRow = new RelativeLayout(this);
             colorRow.setLayoutParams(colorRowLayoutParams);
             colorRow.setGravity(Gravity.CENTER_VERTICAL);
+            colorRow.setGravity(Gravity.CENTER_HORIZONTAL);
 
             TextView colorSquareView = createColorSquareView(color, colorPercentage, colorSquareLayoutParams);
-            TextView colorTextView = createColorTextView(colorString, colorTextLayoutParams);
+            TextView colorTextView = createColorTextViewSquares(colorString, colorTextLayoutParams);
 
             colorRow.addView(colorSquareView);
             colorRow.addView(colorTextView);
@@ -89,16 +105,51 @@ public class ResultsActivity extends AppCompatActivity {
         }
 
         colorBreakdownLayout.invalidate();
+
+        ImageButton HomeButton = (ImageButton) findViewById(R.id.home_results);
+        ImageButton BackToExtractButton = (ImageButton) findViewById(R.id.back_results);
+
+        HomeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startHomeActivity();
+            }
+        });
+        BackToExtractButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startExtractColorActivity();
+            }
+        });
+    }
+    private void startHomeActivity(){
+
+        Intent intent = new Intent(this, HomeActivity.class);
+        startActivity(intent);
+    }
+    private void startExtractColorActivity(){
+
+        Intent intent = new Intent(this, ExtractColorActivity.class);
+        startActivity(intent);
     }
 
     TextView createColorTextView(String text, RelativeLayout.LayoutParams lp){
         TextView colorTextView = new TextView(this);
 
+        colorTextView.setTextSize(50);
+        colorTextView.setTextColor(ContextCompat.getColor(this, R.color.theme_text));
+        colorTextView.setText(text);
+        Typeface typeface = ResourcesCompat.getFont(this, R.font.sunshine);
+        colorTextView.setTypeface(typeface);
+        colorTextView.setLayoutParams(lp);
+        return colorTextView;
+    }
+    TextView createColorTextViewSquares(String text, RelativeLayout.LayoutParams lp){
+        TextView colorTextView = new TextView(this);
+
         colorTextView.setTextSize(30);
         colorTextView.setTextColor(ContextCompat.getColor(this, R.color.theme_text));
         colorTextView.setText(text);
-        Typeface typeface = ResourcesCompat.getFont(this, R.font.lobster);
-        colorTextView.setTypeface(typeface);
         colorTextView.setLayoutParams(lp);
         return colorTextView;
     }

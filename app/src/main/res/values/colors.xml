@@ -7,5 +7,6 @@
     <color name="theme_light">#FFaaceca</color>
     <color name="theme_text">#FF15311e</color>
     <color name="accent">#FF607D8B</color>
+    <color name = "accent_secondary"> #df8863</color>
     <color name="background">#FFaaceca</color>
 </resources>

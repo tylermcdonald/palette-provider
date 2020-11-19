@@ -1,9 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EditPhotoActivity">
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:background="@drawable/opaque_lillies">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_height="15dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/status_dots_2" />
+    <ImageView
+ android:layout_width="300dp"
+ android:layout_height="0dp"
+ android:layout_weight="6"
+ android:scaleType="centerCrop"
+android:layout_marginTop="60dp"
+android:layout_marginBottom="40dp"
+android:layout_marginLeft="55dp"
+android:src="@drawable/alma465"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+
+        android:layout_marginLeft="20dp"
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:layout_gravity="center"
+
+            android:layout_marginRight="10dp"
+            android:backgroundTint="@color/theme"
+            android:elevation="100dp"
+            android:text="Crop"
+            android:background="@drawable/rounded_buttons"
+            android:textAllCaps="TRUE"
+            android:textColor="@color/white"
+            android:textSize="18dp"></Button>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:backgroundTint="@color/theme"
+            android:elevation="100dp"
+            android:text="Brightness"
+            android:background="@drawable/rounded_buttons"
+            android:textAllCaps="TRUE"
+            android:textColor="@color/white"
+            android:textSize="18dp"></Button>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:orientation="vertical">
+       <Button
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_gravity="center"
+           style="@style/Button"
+           android:elevation="100dp"
+           android:background="@drawable/second_roundedbutton"
+           android:textAllCaps="TRUE"
+           android:text="Continue"
+           android:textColor="@color/white"
+           android:textSize="18dp">
+       </Button>
+
+    </LinearLayout>
+
+    <!--    <View-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="40dp">-->
+    <RelativeLayout
+        android:id="@+id/nav"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginBottom="10dp">
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_height="40dp"
+            android:background="@drawable/back_arrow" />
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_marginRight="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_height="35dp"
+            android:background="@drawable/home_icon" />
+    </RelativeLayout>
+    <!--    </View>-->
+</LinearLayout>
