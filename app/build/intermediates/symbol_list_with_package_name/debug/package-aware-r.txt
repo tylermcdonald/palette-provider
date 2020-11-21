@@ -1898,7 +1898,9 @@ id enterAlwaysCollapsed
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
+id extractColorImage
 id extractColorTitle
+id extractColorTitles
 id extractColor_status
 id fade
 id fill
@@ -2237,6 +2239,7 @@ layout activity_edit_photo
 layout activity_error
 layout activity_error_lighting
 layout activity_extract_color
+layout activity_extract_color_photo
 layout activity_home
 layout activity_loading
 layout activity_main

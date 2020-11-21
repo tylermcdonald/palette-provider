@@ -23,11 +23,13 @@
         <activity android:name="com.pstcstest.paletteprovider.ResultsActivity" />
         <activity android:name="com.pstcstest.paletteprovider.SavedColorsActivity" />
         <activity android:name="com.pstcstest.paletteprovider.ExtractColorActivity" />
+        <activity android:name="com.pstcstest.paletteprovider.ExtractColorPhotoActivity" />
         <activity android:name="com.pstcstest.paletteprovider.EditPhotoActivity" />
         <activity android:name="com.pstcstest.paletteprovider.ErrorActivity" />
         <activity android:name="com.pstcstest.paletteprovider.HomeActivity" />
         <activity android:name="com.pstcstest.paletteprovider.CameraActivity" />
         <activity android:name="com.pstcstest.paletteprovider.LoadingActivity" />
+        <activity android:name="com.pstcstest.paletteprovider.ZoomActivity" />
         <activity android:name="com.pstcstest.paletteprovider.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

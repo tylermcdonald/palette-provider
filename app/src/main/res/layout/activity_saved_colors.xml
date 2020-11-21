@@ -78,10 +78,10 @@
                 android:id="@+id/savedColor03"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_row="0"
                 android:layout_column="3"
                 android:layout_margin="15dp"
-                android:background="@drawable/color_block_border"
+                android:layout_row="0"
+                android:background="@drawable/color_square"
                 android:visibility="visible" />
 
             <View

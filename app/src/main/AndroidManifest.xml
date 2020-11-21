@@ -10,14 +10,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PaletteProvider">
-        <activity android:name=".ResultsActivity"></activity>
+        <activity android:name=".ResultsActivity" />
         <activity android:name=".SavedColorsActivity" />
         <activity android:name=".ExtractColorActivity" />
+        <activity android:name=".ExtractColorPhotoActivity" />
         <activity android:name=".EditPhotoActivity" />
         <activity android:name=".ErrorActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".CameraActivity" />
         <activity android:name=".LoadingActivity" />
+        <activity android:name=".ZoomActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

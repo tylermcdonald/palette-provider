@@ -18,7 +18,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.res.ResourcesCompat;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Set;
 
 public class ResultsActivity extends AppCompatActivity {
 
@@ -28,10 +31,14 @@ public class ResultsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_results);
+        View decorView = getWindow().getDecorView();
+
+        // Hide the status bar.
+        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
 
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-        int screenHeight = displayMetrics.heightPixels;
         int screenWidth = displayMetrics.widthPixels;
 
         Intent intent = getIntent();
@@ -45,7 +52,7 @@ public class ResultsActivity extends AppCompatActivity {
         colorRowLayoutParams.setMargins(screenWidth / 8, 50, screenWidth / 8, 32);
         colorRowLayoutParams.addRule(RelativeLayout.CENTER_VERTICAL);
 
-        RelativeLayout.LayoutParams colorSquareLayoutParams = new RelativeLayout.LayoutParams(200, 200);
+        RelativeLayout.LayoutParams colorSquareLayoutParams = new RelativeLayout.LayoutParams(164, 164);
         RelativeLayout.LayoutParams colorSquareTargetLayoutParams = new RelativeLayout.LayoutParams(300, 300);
         colorSquareTargetLayoutParams.addRule(RelativeLayout.CENTER_HORIZONTAL);
         colorSquareTargetLayoutParams.addRule(RelativeLayout.CENTER_VERTICAL);
@@ -74,7 +81,7 @@ public class ResultsActivity extends AppCompatActivity {
 
         targetColorSquareView.setLayoutParams(colorSquareTargetLayoutParams);
 
-        TextView targetColorTextView = createColorTextView(getString(R.string.target_color), targetColorTextLayoutParams);
+        TextView targetColorTextView = createTargetColorTextView(getString(R.string.target_color), targetColorTextLayoutParams);
 
         targetColorRow.addView(targetColorSquareView);
         targetColorRowText.addView(targetColorTextView);
@@ -82,19 +89,50 @@ public class ResultsActivity extends AppCompatActivity {
         colorBreakdownLayout.addView(targetColorRowText);
         colorBreakdownLayout.addView(targetColorRow);
 
-
         char colorIndex = 'A';
-        for(Integer color : dividedColors.keySet()){
-            String colorPercentage = dividedColors.get(color)+"%";
-            String colorString = "COLOR "+colorIndex;
+        Set<Integer> splitColors = dividedColors.keySet();
+        List<Integer> orderedSplitColors = new ArrayList<>();
+        List<Integer> orderedSplitPercentages = new ArrayList<>();
+
+        int count = 0;
+        for(Integer color : splitColors){
+            if(count == 0){
+                orderedSplitColors.add(color);
+                orderedSplitPercentages.add(dividedColors.get(color));
+            }else if(count == 1){
+                if(orderedSplitPercentages.get(0) > dividedColors.get(color)){
+                    orderedSplitColors.add(color);
+                    orderedSplitPercentages.add(dividedColors.get(color));
+                }else{
+                    orderedSplitColors.add(0, color);
+                    orderedSplitPercentages.add(0, dividedColors.get(color));
+                }
+            }else if(count == 2){
+                if(orderedSplitPercentages.get(1) > dividedColors.get(color)) {
+                    orderedSplitColors.add(color);
+                    orderedSplitPercentages.add(dividedColors.get(color));
+                }else if(orderedSplitPercentages.get(0) > dividedColors.get(color)){
+                    orderedSplitColors.add(1, color);
+                    orderedSplitPercentages.add(1, dividedColors.get(color));
+                }else{
+                    orderedSplitColors.add(0, color);
+                    orderedSplitPercentages.add(0, dividedColors.get(color));
+                }
+            }
+            count += 1;
+        }
+        for(int i = 0; i < orderedSplitPercentages.size(); i++){
+            int color = orderedSplitColors.get(i);
+            String colorPercentage = orderedSplitPercentages.get(i)+"%";
+            String colorString = "Color "+colorIndex;
 
             RelativeLayout colorRow = new RelativeLayout(this);
+
             colorRow.setLayoutParams(colorRowLayoutParams);
             colorRow.setGravity(Gravity.CENTER_VERTICAL);
-            colorRow.setGravity(Gravity.CENTER_HORIZONTAL);
 
             TextView colorSquareView = createColorSquareView(color, colorPercentage, colorSquareLayoutParams);
-            TextView colorTextView = createColorTextViewSquares(colorString, colorTextLayoutParams);
+            TextView colorTextView = createColorTextView(colorString, colorTextLayoutParams);
 
             colorRow.addView(colorSquareView);
             colorRow.addView(colorTextView);
@@ -132,15 +170,24 @@ public class ResultsActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ExtractColorActivity.class);
         startActivity(intent);
     }
+    TextView createTargetColorTextView(String text, RelativeLayout.LayoutParams lp){
+        TextView colorTextView = new TextView(this);
+
+        Typeface typeface = ResourcesCompat.getFont(this, R.font.sunshine);
+        colorTextView.setTypeface(typeface);
+        colorTextView.setTextSize(40);
+        colorTextView.setTextColor(ContextCompat.getColor(this, R.color.theme_text));
+        colorTextView.setText(text);
+        colorTextView.setLayoutParams(lp);
+        return colorTextView;
+    }
 
     TextView createColorTextView(String text, RelativeLayout.LayoutParams lp){
         TextView colorTextView = new TextView(this);
 
-        colorTextView.setTextSize(50);
+        colorTextView.setTextSize(40);
         colorTextView.setTextColor(ContextCompat.getColor(this, R.color.theme_text));
         colorTextView.setText(text);
-        Typeface typeface = ResourcesCompat.getFont(this, R.font.sunshine);
-        colorTextView.setTypeface(typeface);
         colorTextView.setLayoutParams(lp);
         return colorTextView;
     }
