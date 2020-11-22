@@ -42,7 +42,7 @@
                 android:layout_height="70dp"
                 android:background="@drawable/rounded_buttons"
                 android:layout_centerHorizontal="true"
-
+                android:fontFamily="@font/lato_medium"
                 android:text="Save Color"
                 android:textSize="20dp"
                 app:backgroundTint="@color/theme"
