@@ -94,6 +94,7 @@
                    android:layout_gravity="center"
                    style="@style/Button"
                    android:elevation="100dp"
+                   android:fontFamily="@font/lato_medium"
                    android:background="@drawable/second_roundedbutton"
                    android:text="Continue"
                    android:textColor="@color/white"

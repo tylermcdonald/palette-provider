@@ -193,8 +193,10 @@ public class ResultsActivity extends AppCompatActivity {
     }
     TextView createColorTextViewSquares(String text, RelativeLayout.LayoutParams lp){
         TextView colorTextView = new TextView(this);
-
+        Typeface typeface = ResourcesCompat.getFont(this, R.font.lato_medium);
+        colorTextView.setTypeface(typeface);
         colorTextView.setTextSize(30);
+
         colorTextView.setTextColor(ContextCompat.getColor(this, R.color.theme_text));
         colorTextView.setText(text);
         colorTextView.setLayoutParams(lp);
