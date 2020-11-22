@@ -6,13 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".ExtractColorActivity"
     android:background="@drawable/opaque_lillies">
-
+    <LinearLayout
+        android:layout_height="match_parent"
+        android:layout_margin="15dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent">
     <ImageView
         android:id="@+id/extractColor_status"
         android:layout_width="wrap_content"
         android:layout_height="15dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="16dp"
+        android:layout_marginBottom="10dp"
         android:src="@drawable/status_dots_2"
         app:layout_constraintBottom_toTopOf="@+id/extractColorTitle"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -20,9 +24,9 @@
         app:layout_constraintTop_toTopOf="parent" />
     <TextView
         android:id="@+id/extractColorTitle"
-        android:layout_width="411dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/sunshine"
+        android:fontFamily="@font/lobster2"
         android:gravity="center_horizontal"
         android:text="@string/extract_color"
         android:textColor="#2a6e3a"
@@ -39,9 +43,12 @@
         android:id="@+id/colorPickerView"
         android:layout_width="300dp"
         android:layout_height="300dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="40dp"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toTopOf="@id/lightMutedColorView"
         app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_gravity="center_horizontal"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/extractColorTitle"
         app:layout_constraintVertical_weight="2.0" />
@@ -60,7 +67,7 @@
         app:layout_constraintRight_toRightOf="parent"
         android:foregroundGravity="left"
         app:layout_constraintVertical_weight="1.0"
-        android:layout_marginStart="40dp"/>
+        android:layout_marginStart="10dp"/>
 
     <!-- Slider bar for changing transparency value -->
     <com.skydoves.colorpickerview.sliders.AlphaSlideBar
@@ -79,9 +86,9 @@
 
     <TextView
         android:id="@+id/brightness_slider_text"
-        android:layout_width="411dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="left"
+        android:layout_gravity="left"
         android:text="Brightness:"
         android:textColor="#2a6e3a"
         android:textSize="20sp"
@@ -91,7 +98,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintVertical_weight="1.0"
-        android:layout_marginStart="40dp"/>
+        android:layout_marginStart="10dp"/>
 
     <!-- Slider bar fro changing brightness value -->
     <com.skydoves.colorpickerview.sliders.BrightnessSlideBar
@@ -105,31 +112,37 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/brightness_slider_text"
-        android:layout_marginHorizontal="10dp"
+        android:layout_marginHorizontal="16dp"
         android:layout_marginTop="5dp"
-        android:layout_marginLeft="40dp"
+        android:layout_marginLeft="10dp"
         />
 
-    <Button
-        android:id="@+id/mixThisColorButton"
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:text="@string/mix_this_color"
-        android:background="@drawable/rounded_buttons"
-        android:textSize="20dp"
-        android:backgroundTint="#2a6e3a"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/brightnessSlide"
-        app:layout_constraintVertical_weight="1.0" />
+
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         tools:ignore="MissingConstraints">
+        <Button
+            android:id="@+id/mixThisColorButton"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="@string/mix_this_color"
+            android:background="@drawable/rounded_buttons"
+            android:textSize="20dp"
+            android:backgroundTint="#2a6e3a"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+
+
+            tools:ignore="NotSibling" />
         <ImageButton
+            android:id="@+id/home_extract_color"
             android:layout_width="40dp"
             android:layout_marginLeft="20dp"
             android:layout_alignParentBottom="true"
@@ -137,6 +150,7 @@
             android:layout_height="40dp"
             android:background="@drawable/back_arrow" />
         <ImageButton
+            android:id="@+id/backbutton_extract_color"
             android:layout_width="40dp"
             android:layout_alignParentBottom="true"
             android:layout_marginRight="20dp"
@@ -203,12 +217,6 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/mutedColorView"
         app:layout_constraintTop_toBottomOf="@id/colorPickerView" />
-
-<!--    <LinearLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        tools:layout_editor_absoluteX="-15dp"-->
-<!--        tools:layout_editor_absoluteY="26dp">-->
-
-<!--    </LinearLayout>-->
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
+

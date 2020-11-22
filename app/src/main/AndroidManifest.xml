@@ -18,8 +18,8 @@
         <activity android:name=".ErrorActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".CameraActivity" />
-        <activity android:name=".LoadingActivity" />
         <activity android:name=".ZoomActivity" />
+        <activity android:name=".BrightnessActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

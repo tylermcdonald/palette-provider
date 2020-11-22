@@ -10,7 +10,7 @@ import android.widget.Button;
 public class HomeActivity extends AppCompatActivity {
 
     private void startExtractColorsPhotoActivity(){
-        Intent intent = new Intent(this, ExtractColorPhotoActivity.class);
+        Intent intent = new Intent(this, EditPhotoActivity.class);
         startActivity(intent);
     }
 

@@ -173,7 +173,7 @@ public class ResultsActivity extends AppCompatActivity {
     TextView createTargetColorTextView(String text, RelativeLayout.LayoutParams lp){
         TextView colorTextView = new TextView(this);
 
-        Typeface typeface = ResourcesCompat.getFont(this, R.font.sunshine);
+        Typeface typeface = ResourcesCompat.getFont(this, R.font.lobster2);
         colorTextView.setTypeface(typeface);
         colorTextView.setTextSize(40);
         colorTextView.setTextColor(ContextCompat.getColor(this, R.color.theme_text));

@@ -10,8 +10,10 @@
         <item name="colorSecondaryVariant">@color/accent</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Customize your theme here. -->
+
     </style>
     <style name="Button" parent="Base.TextAppearance.AppCompat.Button" >
         <item name="backgroundTint">#df8863</item>
     </style>
+
 </resources>
