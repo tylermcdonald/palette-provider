@@ -13,7 +13,6 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import com.skydoves.colorpickerview.ColorPickerView;
@@ -50,48 +49,49 @@ public class ExtractColorActivity extends AppCompatActivity {
     }
 
     ColorPickerView colorPickerView;
-    final Map<Integer, HashMap<Integer,Integer>> POSSIBLE_COLORS = new HashMap<>();
+    final Map<Integer, HashMap<Integer,PaletteColor>> POSSIBLE_COLORS = new HashMap<>();
 
     private void createPossibleColors(){
 
-        HashMap<Integer, Integer> lightGrey = new HashMap<>();
-        lightGrey.put(Color.rgb(255, 255, 255), 80);
-        lightGrey.put(Color.rgb(0, 0, 0), 20);
+        HashMap<Integer, PaletteColor> lightGrey = new HashMap<>();
+
+        lightGrey.put(Color.rgb(255, 255, 255), new PaletteColor(80, "White"));
+        lightGrey.put(Color.rgb(0, 0, 0), new PaletteColor(20, "Black"));
         POSSIBLE_COLORS.put(Color.rgb(200, 200, 200), lightGrey);
 
-        HashMap<Integer, Integer> darkGrey = new HashMap<>();
-        darkGrey.put(Color.rgb(0, 0, 0), 80);
-        darkGrey.put(Color.rgb(255, 255, 255), 20);
+        HashMap<Integer, PaletteColor> darkGrey = new HashMap<>();
+        darkGrey.put(Color.rgb(255, 255, 255), new PaletteColor(20, "White"));
+        darkGrey.put(Color.rgb(0, 0, 0), new PaletteColor(80, "Black"));
         POSSIBLE_COLORS.put(2631720, darkGrey);
 
-        HashMap<Integer, Integer> darkBlue = new HashMap<>();
-        darkBlue.put(Color.rgb(0, 0, 255), 70);
-        darkBlue.put(Color.rgb(0, 0, 0), 15);
-        darkBlue.put(Color.rgb(255, 158, 0), 15);
+        HashMap<Integer, PaletteColor> darkBlue = new HashMap<>();
+        darkBlue.put(Color.rgb(0, 0, 255), new PaletteColor(70, "True Blue"));
+        darkBlue.put(Color.rgb(0, 0, 0), new PaletteColor(15, "Black"));
+        darkBlue.put(Color.rgb(255, 158, 0), new PaletteColor(15, "Bright Orange"));
         POSSIBLE_COLORS.put(Color.rgb(0, 0, 185), darkBlue);
 
-        HashMap<Integer, Integer> purple = new HashMap<>();
-        purple.put(Color.rgb(158, 0, 0), 45);
-        purple.put(Color.rgb(0, 0, 255), 45);
-        purple.put(Color.rgb(0, 55, 255), 10);
+        HashMap<Integer, PaletteColor> purple = new HashMap<>();
+        purple.put(Color.rgb(158, 0, 0),  new PaletteColor(45, "Santa Red"));
+        purple.put(Color.rgb(0, 0, 255), new PaletteColor(45, "True Blue"));
+        purple.put(Color.rgb(0, 55, 255),  new PaletteColor(10, "Ocean Blue"));
         POSSIBLE_COLORS.put(Color.rgb(160, 0, 158), purple);
 
-        HashMap<Integer, Integer> pink = new HashMap<>();
-        pink.put(Color.rgb(0, 0, 158), 45);
-        pink.put(Color.rgb(255, 0, 0), 45);
-        pink.put(Color.rgb(0, 155, 0), 10);
+        HashMap<Integer, PaletteColor> pink = new HashMap<>();
+        pink.put(Color.rgb(0, 0, 158),  new PaletteColor(45, "Primary Blue"));
+        pink.put(Color.rgb(255, 0, 0),  new PaletteColor(45, "True Red"));
+        pink.put(Color.rgb(0, 155, 0),  new PaletteColor(10, "Avocado"));
         POSSIBLE_COLORS.put(Color.rgb(255, 155, 158), pink);
 
-        HashMap<Integer, Integer> orange = new HashMap<>();
-        orange.put(Color.rgb(255, 0, 0), 70);
-        orange.put(Color.rgb(0, 145, 0), 25);
-        orange.put(Color.rgb(0, 0, 150), 5);
+        HashMap<Integer, PaletteColor> orange = new HashMap<>();
+        orange.put(Color.rgb(255, 0, 0),  new PaletteColor(70, "True Red"));
+        orange.put(Color.rgb(0, 145, 0),  new PaletteColor(25, "Avocado"));
+        orange.put(Color.rgb(0, 0, 150),  new PaletteColor(5, "Primary Blue"));
         POSSIBLE_COLORS.put(Color.rgb(255, 145, 54), orange);
 
-        HashMap<Integer, Integer> teal = new HashMap<>();
-        teal.put(Color.rgb(0, 255, 0), 70);
-        teal.put(Color.rgb(0, 0, 193), 25);
-        teal.put(Color.rgb(222, 222, 222), 5);
+        HashMap<Integer, PaletteColor> teal = new HashMap<>();
+        teal.put(Color.rgb(0, 255, 0), new PaletteColor(70, "Festive Green"));
+        teal.put(Color.rgb(0, 0, 193), new PaletteColor(25, "True Blue"));
+        teal.put(Color.rgb(222, 222, 222), new PaletteColor(5, "Slate"));
         POSSIBLE_COLORS.put(Color.rgb(15, 255, 193), teal);
     }
 
@@ -103,21 +103,7 @@ public class ExtractColorActivity extends AppCompatActivity {
 // Hide the status bar.
         int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
         decorView.setSystemUiVisibility(uiOptions);
-        ImageButton HomeButton = (ImageButton) findViewById(R.id.home_extract_color);
-        ImageButton BackToExtractButton = (ImageButton) findViewById(R.id.backbutton_extract_color);
 
-        HomeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startHomeScreenActivity();
-            }
-        });
-        BackToExtractButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startHomeScreenActivity();
-            }
-        });
         createPossibleColors();
         mixThisColorButton = (Button) findViewById(R.id.mixThisColorButton);
         lightVibrantColorView = (View) findViewById(R.id.lightVibrantColorView);
@@ -150,7 +136,7 @@ public class ExtractColorActivity extends AppCompatActivity {
         });
     }
 
-    private HashMap<Integer, Integer> divideSelectedColor(int targetColor){
+    private HashMap<Integer, PaletteColor> divideSelectedColor(int targetColor){
         int targetGreen = Color.green(targetColor);
         int targetRed = Color.red(targetColor);
         int targetBlue = Color.blue(targetColor);
@@ -178,15 +164,12 @@ public class ExtractColorActivity extends AppCompatActivity {
     private void startResultsActivity(int targetColor){
         Intent intent = new Intent(this, ResultsActivity.class);
 
-        HashMap<Integer, Integer> dividedColors = divideSelectedColor(targetColor);
+        HashMap<Integer, PaletteColor> dividedColors = divideSelectedColor(targetColor);
 
         System.out.println(dividedColors);
         intent.putExtra(getString(R.string.target_color_key), targetColor);
         intent.putExtra(getString(R.string.divided_colors_key), dividedColors);
         startActivity(intent);
     }
-    private void startHomeScreenActivity() {
-        Intent intent = new Intent(this, HomeActivity.class);
-        startActivity(intent);
-    }
+
 }
