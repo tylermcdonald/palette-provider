@@ -15,7 +15,7 @@
 11-->/Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:5:22-77
 12
 13    <application
-13-->/Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:6:5-30:19
+13-->/Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:6:5-31:19
 14        android:allowBackup="true"
 14-->/Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:7:9-35
 15        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -63,17 +63,17 @@
 32-->/Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:22:9-56
 32-->/Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:22:19-53
 33        <activity android:name="com.pstcstest.paletteprovider.MainActivity" >
-33-->/Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:23:9-29:20
+33-->/Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:23:9-30:20
 33-->/Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:23:19-47
 34            <intent-filter>
-34-->/Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:24:13-28:29
+34-->/Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:25:13-29:29
 35                <action android:name="android.intent.action.MAIN" />
-35-->/Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:25:17-69
-35-->/Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:25:25-66
+35-->/Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:26:17-69
+35-->/Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:26:25-66
 36
 37                <category android:name="android.intent.category.LAUNCHER" />
-37-->/Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:27:17-77
-37-->/Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:27:27-74
+37-->/Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:28:17-77
+37-->/Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:28:27-74
 38            </intent-filter>
 39        </activity>
 40    </application>

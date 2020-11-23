@@ -41,15 +41,17 @@
             android:scaleType="centerCrop"
             android:layout_margin="20dp"
             android:src="@drawable/alma465"/>
-            <SeekBar
-                android:layout_width="300dp"
-                android:layout_height="50dp"
-                android:progress="70"
-                android:theme ="@style/Button"
-                android:thumbTint="#15311e"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp">
-            </SeekBar>
+        <SeekBar
+            android:id="@+id/seekbar"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:max="510"
+            android:progress="255"
+            android:theme ="@style/Button"
+            android:thumbTint="#15311e"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp">
+        </SeekBar>
 
         <RelativeLayout
             android:layout_width="match_parent"

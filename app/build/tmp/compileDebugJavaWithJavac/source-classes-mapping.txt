@@ -22,6 +22,18 @@ com/pstcstest/paletteprovider/HomeActivity.java
  com.pstcstest.paletteprovider.HomeActivity$1
  com.pstcstest.paletteprovider.HomeActivity$2
  com.pstcstest.paletteprovider.HomeActivity$3
+com/pstcstest/paletteprovider/ExtractColorActivity.java
+ com.pstcstest.paletteprovider.ExtractColorActivity
+ com.pstcstest.paletteprovider.ExtractColorActivity$1
+com/pstcstest/paletteprovider/ErrorActivity.java
+ com.pstcstest.paletteprovider.ErrorActivity
+com/pstcstest/paletteprovider/ResultsActivity.java
+ com.pstcstest.paletteprovider.ResultsActivity
+ com.pstcstest.paletteprovider.ResultsActivity$1
+ com.pstcstest.paletteprovider.ResultsActivity$2
+com/pstcstest/paletteprovider/MainActivity.java
+ com.pstcstest.paletteprovider.MainActivity
+ com.pstcstest.paletteprovider.MainActivity$1
 com/pstcstest/paletteprovider/EditPhotoActivity.java
  com.pstcstest.paletteprovider.EditPhotoActivity
  com.pstcstest.paletteprovider.EditPhotoActivity$1
@@ -29,19 +41,11 @@ com/pstcstest/paletteprovider/EditPhotoActivity.java
  com.pstcstest.paletteprovider.EditPhotoActivity$3
  com.pstcstest.paletteprovider.EditPhotoActivity$4
  com.pstcstest.paletteprovider.EditPhotoActivity$5
-com/pstcstest/paletteprovider/ErrorActivity.java
- com.pstcstest.paletteprovider.ErrorActivity
 com/pstcstest/paletteprovider/BrightnessActivity.java
  com.pstcstest.paletteprovider.BrightnessActivity
  com.pstcstest.paletteprovider.BrightnessActivity$1
  com.pstcstest.paletteprovider.BrightnessActivity$2
-com/pstcstest/paletteprovider/MainActivity.java
- com.pstcstest.paletteprovider.MainActivity
- com.pstcstest.paletteprovider.MainActivity$1
-com/pstcstest/paletteprovider/ResultsActivity.java
- com.pstcstest.paletteprovider.ResultsActivity
- com.pstcstest.paletteprovider.ResultsActivity$1
- com.pstcstest.paletteprovider.ResultsActivity$2
-com/pstcstest/paletteprovider/ExtractColorActivity.java
- com.pstcstest.paletteprovider.ExtractColorActivity
- com.pstcstest.paletteprovider.ExtractColorActivity$1
+ com.pstcstest.paletteprovider.BrightnessActivity$3
+com/pstcstest/paletteprovider/PictureThread.java
+ com.pstcstest.paletteprovider.PictureThread
+ com.pstcstest.paletteprovider.PictureThread$1

@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:2:1-32:12
-INJECTED from /Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:2:1-32:12
-INJECTED from /Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:2:1-32:12
-INJECTED from /Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:2:1-32:12
+ADDED from /Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:2:1-33:12
 MERGED from [com.google.android.material:material:1.2.1] /Users/gracedomel/.gradle/caches/transforms-2/files-2.1/b988cdf40af7cdf3e0317011f8e5bfe7/material-1.2.1/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /Users/gracedomel/.gradle/caches/transforms-2/files-2.1/ec4dd897d4037390d3cac18fc3984d5c/constraintlayout-2.0.4/AndroidManifest.xml:2:1-11:12
 MERGED from [com.github.skydoves:colorpickerpreference:2.0.5] /Users/gracedomel/.gradle/caches/transforms-2/files-2.1/eef105c5cd3db2eec71556712243bbd3/jetified-colorpickerpreference-2.0.5/AndroidManifest.xml:2:1-11:12
@@ -44,20 +44,20 @@ MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/gracedomel/.gra
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.2.0] /Users/gracedomel/.gradle/caches/transforms-2/files-2.1/cccd3c0e33aa3a9a75544149af27bd44/lifecycle-livedata-core-2.2.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/gracedomel/.gradle/caches/transforms-2/files-2.1/5344f376b9f142648746b3ae893fe6dc/core-runtime-2.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] /Users/gracedomel/.gradle/caches/transforms-2/files-2.1/01339aeadc2379d14234ec1725fb1d1d/jetified-annotation-experimental-1.0.0/AndroidManifest.xml:17:1-24:12
-INJECTED from /Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:2:1-32:12
-INJECTED from /Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:2:1-32:12
-INJECTED from /Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:2:1-32:12
+INJECTED from /Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:2:1-33:12
 	package
 		ADDED from /Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:3:5-44
 		INJECTED from /Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml
-		ADDED from /Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:2:1-32:12
+		ADDED from /Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:2:1-33:12
 		INJECTED from /Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml
-		ADDED from /Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:2:1-32:12
+		ADDED from /Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:2:1-33:12
 		INJECTED from /Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:2:11-69
@@ -66,7 +66,7 @@ ADDED from /Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:5:5-
 	android:name
 		ADDED from /Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:5:22-77
 application
-ADDED from /Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:6:5-30:19
+ADDED from /Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:6:5-31:19
 MERGED from [com.google.android.material:material:1.2.1] /Users/gracedomel/.gradle/caches/transforms-2/files-2.1/b988cdf40af7cdf3e0317011f8e5bfe7/material-1.2.1/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.2.1] /Users/gracedomel/.gradle/caches/transforms-2/files-2.1/b988cdf40af7cdf3e0317011f8e5bfe7/material-1.2.1/AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /Users/gracedomel/.gradle/caches/transforms-2/files-2.1/ec4dd897d4037390d3cac18fc3984d5c/constraintlayout-2.0.4/AndroidManifest.xml:9:5-20
@@ -130,19 +130,19 @@ ADDED from /Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:22:9
 	android:name
 		ADDED from /Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:22:19-53
 activity#com.pstcstest.paletteprovider.MainActivity
-ADDED from /Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:23:9-29:20
+ADDED from /Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:23:9-30:20
 	android:name
 		ADDED from /Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:23:19-47
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:24:13-28:29
+ADDED from /Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:25:13-29:29
 action#android.intent.action.MAIN
-ADDED from /Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:25:17-69
+ADDED from /Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:26:17-69
 	android:name
-		ADDED from /Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:25:25-66
+		ADDED from /Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:26:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:27:17-77
+ADDED from /Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:28:17-77
 	android:name
-		ADDED from /Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:27:27-74
+		ADDED from /Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml:28:27-74
 uses-sdk
 INJECTED from /Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/gracedomel/palette_check/app/src/main/AndroidManifest.xml
