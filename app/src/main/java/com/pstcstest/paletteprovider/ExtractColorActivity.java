@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import com.skydoves.colorpickerview.ColorPickerView;
@@ -25,6 +26,7 @@ import java.util.List;
 import java.util.Map;
 
 public class ExtractColorActivity extends AppCompatActivity {
+
     public static final int PICK_IMAGE = 1;
 
     Button mixThisColorButton;
@@ -103,7 +105,21 @@ public class ExtractColorActivity extends AppCompatActivity {
 // Hide the status bar.
         int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
         decorView.setSystemUiVisibility(uiOptions);
+        ImageButton HomeButton = (ImageButton) findViewById(R.id.home_extract_color);
+        ImageButton BackToExtractButton = (ImageButton) findViewById(R.id.backbutton_extract_color);
 
+        HomeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startHomeScreenActivity();
+            }
+        });
+        BackToExtractButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startHomeScreenActivity();
+            }
+        });
         createPossibleColors();
         mixThisColorButton = (Button) findViewById(R.id.mixThisColorButton);
         lightVibrantColorView = (View) findViewById(R.id.lightVibrantColorView);
@@ -171,5 +187,12 @@ public class ExtractColorActivity extends AppCompatActivity {
         intent.putExtra(getString(R.string.divided_colors_key), dividedColors);
         startActivity(intent);
     }
-
+    private void startHomeScreenActivity() {
+        Intent intent = new Intent(this, HomeActivity.class);
+        startActivity(intent);
+    }
+    private void startEditPhotoActivity() {
+        Intent intent = new Intent(this, EditPhotoActivity.class);
+        startActivity(intent);
+    }
 }
