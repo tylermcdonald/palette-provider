@@ -2015,6 +2015,7 @@ id notification_background
 id notification_main_column
 id notification_main_column_container
 id off
+id okayBrightness
 id on
 id outline
 id packed
