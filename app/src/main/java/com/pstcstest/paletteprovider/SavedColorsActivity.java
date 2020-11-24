@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import java.util.HashMap;
@@ -87,22 +88,22 @@ public class SavedColorsActivity extends AppCompatActivity {
 
         createPossibleColors();
 
-        View sc0 = (View) findViewById(R.id.savedColor00);
+        Button sc0 = (Button) findViewById(R.id.savedColor00);
         sc0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startResultsActivity(Color.rgb(0x83, 0x34, 0x34));
+                startResultsActivity(Color.rgb(0x77, 0xa0, 0x87));
             }
         });
 
-        View sc1 = (View)  findViewById(R.id.savedColor01);
+        Button sc1 = (Button)  findViewById(R.id.savedColor01);
         sc1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startResultsActivity(Color.rgb(0x83, 0x34, 0x99));
             }
         });
-        View sc2 = (View) findViewById(R.id.savedColor02);
+        Button sc2 = (Button) findViewById(R.id.savedColor02);
         sc2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -110,7 +111,7 @@ public class SavedColorsActivity extends AppCompatActivity {
             }
         });
 
-        View pc0 = (View) findViewById(R.id.popColor00);
+        Button pc0 = (Button) findViewById(R.id.popColor00);
         pc0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -118,7 +119,7 @@ public class SavedColorsActivity extends AppCompatActivity {
             }
         });
 
-        View pc1 =(View) findViewById(R.id.popColor01);
+        Button pc1 =(Button) findViewById(R.id.popColor01);
         pc1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -126,7 +127,7 @@ public class SavedColorsActivity extends AppCompatActivity {
             }
         });
 
-        View pc2 = (View) findViewById(R.id.popColor02);
+        Button pc2 = (Button) findViewById(R.id.popColor02);
         pc2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -139,18 +140,18 @@ public class SavedColorsActivity extends AppCompatActivity {
         HomeSC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                System.out.println("RAN");
-                startResultsActivity(Color.rgb(0xff, 0xa7, 0xa3));
+//                System.out.println("RAN");
+//                startResultsActivity(Color.rgb(0xff, 0xa7, 0xa3));
 
-//                startHomeScreenActivity();
+               startHomeScreenActivity();
             }
         });
         BackSC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 System.out.println("RAN");
-                startResultsActivity(Color.rgb(0xff, 0xa7, 0xa3));
-//                startHomeScreenActivity();
+//                startResultsActivity(Color.rgb(0xff, 0xa7, 0xa3));
+               startHomeScreenActivity();
             }
         });
     }

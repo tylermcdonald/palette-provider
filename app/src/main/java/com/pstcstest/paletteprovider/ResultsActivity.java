@@ -147,6 +147,7 @@ public class ResultsActivity extends AppCompatActivity {
         Button saveThisColorButton = (Button) findViewById(R.id.saveThisColorButton);
         saveThisColorButton.setOnClickListener(new View.OnClickListener() {
             @Override
+
             public void onClick(View v) {
                 startHomeActivity();
             }
