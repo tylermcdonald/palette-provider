@@ -44,37 +44,47 @@
             android:columnCount="4"
             android:rowCount="4">
 
-            <View
+            <Button
                 android:id="@+id/savedColor00"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_row="0"
                 android:layout_column="0"
                 android:layout_margin="15dp"
-                android:backgroundTint="#833434"
+                android:layout_row="0"
                 android:background="@drawable/color_square"
+                android:backgroundTint="#833434"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:onClick="testFunc"
                 android:visibility="visible" />
 
             <View
                 android:id="@+id/savedColor01"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_row="0"
                 android:layout_column="1"
                 android:layout_margin="15dp"
-                android:backgroundTint="#833499"
+                android:layout_row="0"
                 android:background="@drawable/color_square"
+                android:backgroundTint="#833499"
+                android:clickable="true"
+                android:focusable="auto"
+                android:focusableInTouchMode="true"
                 android:visibility="visible" />
 
             <View
                 android:id="@+id/savedColor02"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_row="0"
                 android:layout_column="2"
                 android:layout_margin="15dp"
-                android:backgroundTint="#123099"
+                android:layout_row="0"
                 android:background="@drawable/color_square"
+                android:backgroundTint="#123099"
+                android:clickable="true"
+                android:focusable="auto"
+                android:focusableInTouchMode="true"
                 android:visibility="visible" />
 
             <View
@@ -193,33 +203,42 @@
                 android:id="@+id/popColor00"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_row="0"
                 android:layout_column="0"
                 android:layout_margin="15dp"
-                android:backgroundTint="#a2d7dd"
+                android:layout_row="0"
                 android:background="@drawable/color_square"
+                android:backgroundTint="#a2d7dd"
+                android:clickable="true"
+                android:focusable="auto"
+                android:focusableInTouchMode="true"
                 android:visibility="visible" />
 
             <View
                 android:id="@+id/popColor01"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_row="0"
                 android:layout_column="1"
                 android:layout_margin="15dp"
-                android:backgroundTint="#f1ffed"
+                android:layout_row="0"
                 android:background="@drawable/color_square"
+                android:backgroundTint="#f1ffed"
+                android:clickable="true"
+                android:focusable="auto"
+                android:focusableInTouchMode="true"
                 android:visibility="visible" />
 
             <View
                 android:id="@+id/popColor02"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_row="0"
                 android:layout_column="2"
                 android:layout_margin="15dp"
-                android:backgroundTint="#ffa7a3"
+                android:layout_row="0"
                 android:background="@drawable/color_square"
+                android:backgroundTint="#ffa7a3"
+                android:clickable="true"
+                android:focusable="auto"
+                android:focusableInTouchMode="true"
                 android:visibility="visible" />
 
             <View

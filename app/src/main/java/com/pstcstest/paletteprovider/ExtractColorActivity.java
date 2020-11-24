@@ -1,8 +1,5 @@
 package com.pstcstest.paletteprovider;
 
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -14,7 +11,6 @@ import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 
 import com.skydoves.colorpickerview.ColorPickerView;
 import com.skydoves.colorpickerview.listeners.ColorListener;
@@ -22,8 +18,9 @@ import com.skydoves.colorpickerview.sliders.AlphaSlideBar;
 import com.skydoves.colorpickerview.sliders.BrightnessSlideBar;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class ExtractColorActivity extends AppCompatActivity {
 
@@ -51,10 +48,9 @@ public class ExtractColorActivity extends AppCompatActivity {
     }
 
     ColorPickerView colorPickerView;
-    final Map<Integer, HashMap<Integer,PaletteColor>> POSSIBLE_COLORS = new HashMap<>();
+    final Map<Integer, HashMap<Integer, PaletteColor>> POSSIBLE_COLORS = new HashMap<>();
 
     private void createPossibleColors(){
-
         HashMap<Integer, PaletteColor> lightGrey = new HashMap<>();
 
         lightGrey.put(Color.rgb(255, 255, 255), new PaletteColor(80, "White"));
@@ -95,6 +91,28 @@ public class ExtractColorActivity extends AppCompatActivity {
         teal.put(Color.rgb(0, 0, 193), new PaletteColor(25, "True Blue"));
         teal.put(Color.rgb(222, 222, 222), new PaletteColor(5, "Slate"));
         POSSIBLE_COLORS.put(Color.rgb(15, 255, 193), teal);
+
+
+        HashMap<Integer, PaletteColor> darkRed = new HashMap<>();
+
+        darkRed.put(Color.rgb(255, 0, 0),  new PaletteColor(70, "True Red"));
+        darkRed.put(Color.rgb(0, 55, 255),  new PaletteColor(20, "Ocean Blue"));
+        darkRed.put(Color.rgb(0, 0, 0), new PaletteColor(10, "Black"));
+        POSSIBLE_COLORS.put(Color.rgb(131, 52, 52), darkRed);
+
+        HashMap<Integer, PaletteColor> lightBlue = new HashMap<>();
+
+        lightBlue.put(Color.rgb(0, 0, 255), new PaletteColor(70, "True Blue"));
+        lightBlue.put(Color.rgb(255, 255, 255), new PaletteColor(20, "White"));
+        lightBlue.put(Color.rgb(0, 255, 0), new PaletteColor(10, "Festive Green"));
+        POSSIBLE_COLORS.put(Color.rgb(0xa2, 0xd7, 0xdd), lightBlue);
+
+        HashMap<Integer, PaletteColor> lightGreen = new HashMap<>();
+
+        lightGreen.put(Color.rgb(255, 255, 255), new PaletteColor(80, "White"));
+        lightGreen.put(Color.rgb(0, 255, 0), new PaletteColor(20, "Festive Green"));
+        POSSIBLE_COLORS.put(Color.rgb(0xf1, 0xff, 0xed), lightGreen);
+
     }
 
     @Override
@@ -122,12 +140,6 @@ public class ExtractColorActivity extends AppCompatActivity {
         });
         createPossibleColors();
         mixThisColorButton = (Button) findViewById(R.id.mixThisColorButton);
-        lightVibrantColorView = (View) findViewById(R.id.lightVibrantColorView);
-        vibrantColorView = (View) findViewById(R.id.vibrantColorView);
-        darkVibrantColorView = (View) findViewById(R.id.darkVibrantColorView);
-        lightMutedColorView = (View) findViewById(R.id.lightMutedColorView);
-        mutedColorView = (View) findViewById(R.id.mutedColorView);
-        darkMutedColorView = (View) findViewById(R.id.darkMutedColorView);
 
         colorPickerView = findViewById(R.id.colorPickerView);
 

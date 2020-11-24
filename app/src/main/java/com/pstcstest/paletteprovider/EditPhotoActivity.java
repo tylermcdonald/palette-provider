@@ -64,8 +64,10 @@ public class EditPhotoActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(EditPhotoActivity.this, BrightnessActivity.class);
                 imageView.invalidate();
-                BitmapDrawable bitmapDrawable = (BitmapDrawable) imageView.getDrawable();
-                Bitmap bitmap = bitmapDrawable.getBitmap();
+                imageView.buildDrawingCache();
+                Bitmap bitmap = imageView.getDrawingCache();
+//                BitmapDrawable bitmapDrawable = (BitmapDrawable) imageView.getDrawable();
+//                Bitmap bitmap = bitmapDrawable.getBitmap();
                 intent.putExtra("Image", bitmap);
                 startActivity(intent);
             }

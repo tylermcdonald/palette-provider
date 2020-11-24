@@ -14,14 +14,14 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-import androidx.core.content.res.ResourcesCompat;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.core.content.res.ResourcesCompat;
 
 public class ResultsActivity extends AppCompatActivity {
 
@@ -144,6 +144,14 @@ public class ResultsActivity extends AppCompatActivity {
         ImageButton HomeButton = (ImageButton) findViewById(R.id.home_results);
         ImageButton BackToExtractButton = (ImageButton) findViewById(R.id.back_results);
 
+        Button saveThisColorButton = (Button) findViewById(R.id.saveThisColorButton);
+        saveThisColorButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startHomeActivity();
+            }
+        });
+
         HomeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -153,7 +161,7 @@ public class ResultsActivity extends AppCompatActivity {
         BackToExtractButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startExtractColorActivity();
+                finish();
             }
         });
     }

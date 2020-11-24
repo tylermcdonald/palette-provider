@@ -17,7 +17,7 @@
         android:layout_marginTop="20dp"
         android:layout_gravity="center_horizontal"
         android:src="@drawable/status_icons_3"
-       />
+        />
     <LinearLayout
         android:id="@+id/colorBreakdownLayout"
         android:layout_marginTop="20dp"
@@ -29,25 +29,25 @@
     </LinearLayout>
 
 
-        <RelativeLayout
-            android:id="@+id/saveThisRelativeLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <Button
-                android:id="@+id/saveThisColorButton"
-                android:layout_width="wrap_content"
-                android:layout_marginTop="30dp"
-                android:paddingLeft="30dp"
-                android:paddingRight="30dp"
-                android:layout_height="70dp"
-                android:background="@drawable/rounded_buttons"
-                android:layout_centerHorizontal="true"
-                android:fontFamily="@font/lato_medium"
-                android:text="Save Color"
-                android:textSize="20dp"
-                app:backgroundTint="@color/theme"
-                android:textColor="@color/white" />
-        </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/saveThisRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/saveThisColorButton"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="30dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:layout_height="70dp"
+            android:background="@drawable/rounded_buttons"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/lato_medium"
+            android:text="Save Color"
+            android:textSize="20dp"
+            app:backgroundTint="@color/theme"
+            android:textColor="@color/white" />
+    </RelativeLayout>
 
 
 
