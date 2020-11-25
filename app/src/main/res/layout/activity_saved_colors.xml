@@ -34,141 +34,15 @@
             android:textStyle="bold"
             />
 
-        <GridLayout
-            android:id="@+id/savedColors"
-            android:layout_width="308dp"
-            android:layout_height="0dp"
-            android:layout_weight="9.5"
-            android:layout_gravity="center_horizontal"
-            android:backgroundTint="#aaceca"
-            android:columnCount="4"
-            android:rowCount="4">
+        <LinearLayout
+            android:id="@+id/savedColorsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="12px"
+            android:layout_marginStart="12px"
+            android:orientation="vertical"></LinearLayout>
 
-            <Button
-                android:id="@+id/savedColor00"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_column="0"
-                android:layout_margin="15dp"
-                android:layout_row="0"
-                android:background="@drawable/color_square"
-                android:backgroundTint="#833434"
-                android:visibility="visible" />
-
-            <Button
-                android:id="@+id/savedColor01"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_column="1"
-                android:layout_margin="15dp"
-                android:layout_row="0"
-                android:background="@drawable/color_square"
-                style="@style/sc01"
-                android:visibility="visible" />
-
-            <Button
-                android:id="@+id/savedColor02"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_column="2"
-                android:layout_margin="15dp"
-                android:layout_row="0"
-                android:background="@drawable/color_square"
-                android:backgroundTint="#123099"
-                style="@style/sc02"
-                android:visibility="visible" />
-
-            <View
-                android:id="@+id/savedColor03"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_column="3"
-                android:layout_margin="15dp"
-                android:layout_row="0"
-                android:background="@drawable/color_square"
-                android:visibility="visible" />
-
-            <View
-                android:id="@+id/savedColor10"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_row="1"
-                android:layout_column="0"
-                android:layout_margin="15dp"
-                android:background="@drawable/color_square"
-                android:visibility="visible" />
-
-            <View
-                android:id="@+id/savedColor11"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_row="1"
-                android:layout_column="1"
-                android:layout_margin="15dp"
-                android:background="@drawable/color_square"
-                android:visibility="visible" />
-
-            <View
-                android:id="@+id/savedColor12"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_row="1"
-                android:layout_column="2"
-                android:layout_margin="15dp"
-                android:background="@drawable/color_square"
-                android:visibility="visible" />
-
-            <View
-                android:id="@+id/savedColor13"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_row="1"
-                android:layout_column="3"
-                android:layout_margin="15dp"
-                android:background="@drawable/color_square"
-                android:visibility="visible" />
-
-            <View
-                android:id="@+id/savedColor20"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_row="2"
-                android:layout_column="0"
-                android:layout_margin="15dp"
-                android:background="@drawable/color_square"
-                android:visibility="visible" />
-
-            <View
-                android:id="@+id/savedColor21"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_row="2"
-                android:layout_column="1"
-                android:layout_margin="15dp"
-                android:background="@drawable/color_square"
-                android:visibility="visible" />
-
-            <View
-                android:id="@+id/savedColor22"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_row="2"
-                android:layout_column="2"
-                android:layout_margin="15dp"
-                android:background="@drawable/color_square"
-                android:visibility="visible" />
-
-            <View
-                android:id="@+id/savedColor23"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_row="2"
-                android:layout_column="3"
-                android:layout_margin="15dp"
-                android:background="@drawable/color_square"
-                android:visibility="visible" />
-
-        </GridLayout>
         <TextView
             android:id="@+id/popColorTitle"
             android:layout_width="match_parent"
@@ -180,56 +54,62 @@
             android:textSize="40sp"
             android:textStyle="bold"
             />
+
         <GridLayout
             android:id="@+id/popColors"
-            android:layout_width="308dp"
+            android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="9.5"
             android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_weight="9.5"
             android:backgroundTint="#aaceca"
             android:columnCount="4"
             android:rowCount="4">
 
-            <Button
+            <View
                 android:id="@+id/popColor00"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="164px"
+                android:layout_height="164px"
                 android:layout_column="0"
                 android:layout_margin="15dp"
                 android:layout_row="0"
-                style="@style/pop00"
                 android:background="@drawable/color_square"
                 android:backgroundTint="#a2d7dd"
+                android:clickable="true"
+                android:focusableInTouchMode="false"
                 android:visibility="visible" />
 
-            <Button
+            <View
                 android:id="@+id/popColor01"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="164px"
+                android:layout_height="164px"
                 android:layout_column="1"
                 android:layout_margin="15dp"
                 android:layout_row="0"
-                style="@style/pop01"
                 android:background="@drawable/color_square"
                 android:backgroundTint="#f1ffed"
+                android:clickable="true"
+                android:focusableInTouchMode="false"
                 android:visibility="visible" />
 
-            <Button
+            <View
                 android:id="@+id/popColor02"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="164px"
+                android:layout_height="164px"
                 android:layout_column="2"
                 android:layout_margin="15dp"
                 android:layout_row="0"
-                style="@style/pop02"
                 android:background="@drawable/color_square"
                 android:backgroundTint="#ffa7a3"
+                android:clickable="true"
+                android:focusableInTouchMode="false"
                 android:visibility="visible" />
 
             <View
                 android:id="@+id/popColor03"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="164px"
+                android:layout_height="164px"
                 android:layout_column="3"
                 android:layout_margin="15dp"
                 android:layout_row="0"
@@ -238,81 +118,81 @@
 
             <View
                 android:id="@+id/popColor10"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_row="1"
+                android:layout_width="164px"
+                android:layout_height="164px"
                 android:layout_column="0"
                 android:layout_margin="15dp"
+                android:layout_row="1"
                 android:background="@drawable/color_square"
                 android:visibility="visible" />
 
             <View
                 android:id="@+id/popColor11"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_row="1"
+                android:layout_width="164px"
+                android:layout_height="164px"
                 android:layout_column="1"
                 android:layout_margin="15dp"
+                android:layout_row="1"
                 android:background="@drawable/color_square"
                 android:visibility="visible" />
 
             <View
                 android:id="@+id/popColor12"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_row="1"
+                android:layout_width="164px"
+                android:layout_height="164px"
                 android:layout_column="2"
                 android:layout_margin="15dp"
+                android:layout_row="1"
                 android:background="@drawable/color_square"
                 android:visibility="visible" />
 
             <View
                 android:id="@+id/popColor13"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_row="1"
+                android:layout_width="164px"
+                android:layout_height="164px"
                 android:layout_column="3"
                 android:layout_margin="15dp"
+                android:layout_row="1"
                 android:background="@drawable/color_square"
                 android:visibility="visible" />
 
             <View
                 android:id="@+id/popColor20"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_row="2"
+                android:layout_width="164px"
+                android:layout_height="164px"
                 android:layout_column="0"
                 android:layout_margin="15dp"
+                android:layout_row="2"
                 android:background="@drawable/color_square"
                 android:visibility="visible" />
 
             <View
                 android:id="@+id/popColor21"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_row="2"
+                android:layout_width="164px"
+                android:layout_height="164px"
                 android:layout_column="1"
                 android:layout_margin="15dp"
+                android:layout_row="2"
                 android:background="@drawable/color_square"
                 android:visibility="visible" />
 
             <View
                 android:id="@+id/popColor22"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_row="2"
+                android:layout_width="164px"
+                android:layout_height="164px"
                 android:layout_column="2"
                 android:layout_margin="15dp"
+                android:layout_row="2"
                 android:background="@drawable/color_square"
                 android:visibility="visible" />
 
             <View
                 android:id="@+id/popColor23"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_row="2"
+                android:layout_width="164px"
+                android:layout_height="164px"
                 android:layout_column="3"
                 android:layout_margin="15dp"
+                android:layout_row="2"
                 android:background="@drawable/color_square"
                 android:visibility="visible" />
 

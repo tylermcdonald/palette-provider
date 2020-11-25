@@ -1,7 +1,7 @@
-#Mon Nov 23 23:28:05 CST 2020
-base.0=/Users/gracedomel/finalpalette/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
+#Wed Nov 25 17:41:46 EST 2020
+base.0=C\:\\Users\\tyler\\Documents\\cs465\\final_project\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 path.1=classes.dex
 renamed.1=classes2.dex
 path.0=classes.dex
 renamed.0=classes.dex
-base.1=/Users/gracedomel/finalpalette/app/build/intermediates/dex/debug/mergeProjectDexDebug/classes.dex
+base.1=C\:\\Users\\tyler\\Documents\\cs465\\final_project\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\classes.dex
