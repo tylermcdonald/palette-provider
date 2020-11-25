@@ -101,6 +101,7 @@ public class ExtractColorPhotoActivity extends AppCompatActivity {
 
         createPossibleColors();
         ImageView imageView = findViewById(R.id.extractColorImage);
+
 //        Bitmap bitmap = (Bitmap) getIntent().getParcelableExtra("Image");
 //        imageView.setImageBitmap(bitmap);
         ImageButton HomeButton = (ImageButton) findViewById(R.id.homebutton_extract_photo);

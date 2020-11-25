@@ -187,6 +187,12 @@ public class SavedColorsActivity extends AppCompatActivity {
         RelativeLayout.LayoutParams colorSquareLayoutParams = new RelativeLayout.LayoutParams(164, 164);
         colorSquareLayoutParams.setMargins(40, 0, 40, 0);
         colorSquareView.setLayoutParams(colorSquareLayoutParams);
+        colorSquareView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startResultsActivity(color);
+            }
+        });
         return colorSquareView;
     }
 

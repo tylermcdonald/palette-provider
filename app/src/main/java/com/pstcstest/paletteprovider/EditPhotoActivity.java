@@ -2,6 +2,7 @@ package com.pstcstest.paletteprovider;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.view.View;
@@ -14,17 +15,25 @@ public class EditPhotoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_photo);
         ImageView imageView = findViewById(R.id.editPhotoImage);
-        Bitmap bitmap = (Bitmap) getIntent().getParcelableExtra("Image");
-        if (bitmap != null) {
-            imageView.setImageBitmap(bitmap);
-        }
-        else {
+        if(getIntent().hasExtra("bitmap")) {
+            System.out.println("HERE");
+            Bitmap b = (Bitmap) getIntent().getParcelableExtra("bitmap");
+            imageView.setImageBitmap(b);
+        }else{
             Bundle bundle = getIntent().getExtras();
             if (bundle != null) {
                 int resId = bundle.getInt("resId");
                 imageView.setImageResource(resId);
             }
         }
+
+//        Bitmap bitmap = (Bitmap) getIntent().getParcelableExtra("Image");
+//        if (bitmap != null) {
+//            imageView.setImageBitmap(bitmap);
+//        }
+//        else {
+//
+//        }
         ImageButton HomeButton = (ImageButton) findViewById(R.id.homebutton_edit_photo);
         ImageButton BackToExtractButton = (ImageButton) findViewById(R.id.backbutton_edit_photo);
         Button ContinueButton = (Button) findViewById(R.id.continueButton);
