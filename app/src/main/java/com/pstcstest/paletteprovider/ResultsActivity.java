@@ -1,6 +1,8 @@
 package com.pstcstest.paletteprovider;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
@@ -16,6 +18,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -147,8 +150,14 @@ public class ResultsActivity extends AppCompatActivity {
         Button saveThisColorButton = (Button) findViewById(R.id.saveThisColorButton);
         saveThisColorButton.setOnClickListener(new View.OnClickListener() {
             @Override
-
             public void onClick(View v) {
+                SharedPreferences sharedPreferences = getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                Set<String> savedColors = sharedPreferences.getStringSet(getString(R.string.saved_colors_key), new HashSet<>());
+
+                savedColors.add(String.valueOf(targetColor));
+                editor.putStringSet(getString(R.string.saved_colors_key), savedColors);
+                editor.apply();
                 startHomeActivity();
             }
         });

@@ -1,16 +1,25 @@
 package com.pstcstest.paletteprovider;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 public class SavedColorsActivity extends AppCompatActivity {
     final Map<Integer, HashMap<Integer, PaletteColor>> POSSIBLE_COLORS = new HashMap<>();
@@ -86,32 +95,33 @@ public class SavedColorsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_saved_colors);
 
+        SharedPreferences sharedPreferences = getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+
+        Set<String> savedColors = sharedPreferences.getStringSet(getString(R.string.saved_colors_key), new HashSet<>());
+        System.out.println("SAVED COLORS");
+        System.out.println(savedColors.toString());
+
+        LinearLayout savedColorsLayout = (LinearLayout) findViewById(R.id.savedColorsLayout);
+        int count = 0;
+        LinearLayout savedColorsRow = new LinearLayout(this);
+        for(String savedColor : savedColors){
+            if(count % 4 == 0){
+                savedColorsLayout.addView(savedColorsRow);
+                savedColorsRow = new LinearLayout(this);
+                savedColorsRow.setOrientation(LinearLayout.HORIZONTAL);
+                savedColorsRow.setPadding(0, 0, 0, 80);
+            }
+            View colorSquare = createColorSquareView(Integer.parseInt(savedColor));
+            savedColorsRow.addView(colorSquare);
+
+            count += 1;
+        }
+        savedColorsLayout.addView(savedColorsRow);
+        savedColorsLayout.invalidate();
+
         createPossibleColors();
 
-        Button sc0 = (Button) findViewById(R.id.savedColor00);
-        sc0.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startResultsActivity(Color.rgb(0x77, 0xa0, 0x87));
-            }
-        });
-
-        Button sc1 = (Button)  findViewById(R.id.savedColor01);
-        sc1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startResultsActivity(Color.rgb(0x83, 0x34, 0x99));
-            }
-        });
-        Button sc2 = (Button) findViewById(R.id.savedColor02);
-        sc2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startResultsActivity(Color.rgb(0x12, 0x30, 0x99));
-            }
-        });
-
-        Button pc0 = (Button) findViewById(R.id.popColor00);
+        View pc0 = (View) findViewById(R.id.popColor00);
         pc0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -119,7 +129,7 @@ public class SavedColorsActivity extends AppCompatActivity {
             }
         });
 
-        Button pc1 =(Button) findViewById(R.id.popColor01);
+        View pc1 =(View) findViewById(R.id.popColor01);
         pc1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -127,7 +137,7 @@ public class SavedColorsActivity extends AppCompatActivity {
             }
         });
 
-        Button pc2 = (Button) findViewById(R.id.popColor02);
+        View pc2 = (View) findViewById(R.id.popColor02);
         pc2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -140,20 +150,44 @@ public class SavedColorsActivity extends AppCompatActivity {
         HomeSC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                System.out.println("RAN");
-//                startResultsActivity(Color.rgb(0xff, 0xa7, 0xa3));
+                System.out.println("RAN");
+                startResultsActivity(Color.rgb(0xff, 0xa7, 0xa3));
 
-               startHomeScreenActivity();
+//                startHomeScreenActivity();
             }
         });
         BackSC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 System.out.println("RAN");
-//                startResultsActivity(Color.rgb(0xff, 0xa7, 0xa3));
-               startHomeScreenActivity();
+                startResultsActivity(Color.rgb(0xff, 0xa7, 0xa3));
+//                startHomeScreenActivity();
             }
         });
+    }
+    TextView createColorSquareView(int color){
+        TextView colorSquareView = new TextView(this);
+        colorSquareView.setBackground(ContextCompat.getDrawable(this, R.drawable.color_square));
+        GradientDrawable gradientDrawable = (GradientDrawable) colorSquareView.getBackground().mutate();
+        gradientDrawable.setColor(color);
+//        int red = Color.red(color);
+//        int green = Color.green(color);
+//        int blue = Color.blue(color);
+
+//        if((red*0.299 + green*0.587 + blue*0.114) > 145) {
+//            colorSquareView.setTextColor(Color.BLACK);
+//        }else {
+//            colorSquareView.setTextColor(Color.WHITE);
+//        }
+
+        colorSquareView.setTextSize(24);
+        colorSquareView.setGravity(Gravity.CENTER);
+//        colorSquareView.setText(text);
+//
+        RelativeLayout.LayoutParams colorSquareLayoutParams = new RelativeLayout.LayoutParams(164, 164);
+        colorSquareLayoutParams.setMargins(40, 0, 40, 0);
+        colorSquareView.setLayoutParams(colorSquareLayoutParams);
+        return colorSquareView;
     }
 
     private HashMap<Integer, PaletteColor> divideSelectedColor(int targetColor){
