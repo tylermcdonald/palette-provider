@@ -1800,7 +1800,9 @@ id aligned
 id all
 id alphaSlideBar
 id alphaSlideBarFrame
+id alphaSlideBarPhoto
 id alpha_slider_text
+id alpha_slider_text_photo
 id always
 id animateToEnd
 id animateToStart
@@ -1829,7 +1831,9 @@ id brightnessButton
 id brightnessSlide
 id brightnessSlideBar
 id brightnessSlideBarFrame
+id brightnessSlidePhoto
 id brightness_slider_text
+id brightness_slider_text_photo
 id bubble
 id buttonPanel
 id cache_measures
@@ -1857,6 +1861,7 @@ id collapseActionView
 id colorBreakdownLayout
 id colorPickerView
 id colorPickerViewFrame
+id colorPickerViewImage
 id colorWheel
 id confirm_button
 id container
@@ -3181,6 +3186,11 @@ style Widget_MaterialComponents_Toolbar_PrimarySurface
 style Widget_MaterialComponents_Toolbar_Surface
 style Widget_MaterialComponents_Tooltip
 style Widget_Support_CoordinatorLayout
+style pop00
+style pop01
+style pop02
+style sc01
+style sc02
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle
 styleable ActionBarLayout android_layout_gravity
 styleable ActionMenuItemView android_minWidth

@@ -47,9 +47,9 @@ public class EditPhotoActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(EditPhotoActivity.this, ExtractColorPhotoActivity.class);
                 imageView.invalidate();
-                BitmapDrawable bitmapDrawable = (BitmapDrawable) imageView.getDrawable();
-                Bitmap bitmap = bitmapDrawable.getBitmap();
-                intent.putExtra("Image", bitmap);
+                //BitmapDrawable bitmapDrawable = (BitmapDrawable) imageView.getDrawable();
+             ////   Bitmap bitmap = bitmapDrawable.getBitmap();
+                //intent.putExtra("Image", bitmap);
                 startActivity(intent);
             }
         });
@@ -63,12 +63,12 @@ public class EditPhotoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(EditPhotoActivity.this, BrightnessActivity.class);
-                imageView.invalidate();
-                imageView.buildDrawingCache();
-                Bitmap bitmap = imageView.getDrawingCache();
+//                imageView.invalidate();
+//                imageView.buildDrawingCache();
+                //Bitmap bitmap = imageView.getDrawingCache();
 //                BitmapDrawable bitmapDrawable = (BitmapDrawable) imageView.getDrawable();
 //                Bitmap bitmap = bitmapDrawable.getBitmap();
-                intent.putExtra("Image", bitmap);
+               // intent.putExtra("Image", bitmap);
                 startActivity(intent);
             }
         });
